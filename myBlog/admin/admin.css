@@ -1,0 +1,75 @@
+*{
+	margin:0;
+	padding: 0;
+}
+/*body{
+	overflow: hidden;
+}*/
+.page-content p{
+	width: 100%;
+	text-align: center;
+}
+.adminContentWrapper{
+	position: relative;
+	width: 90%;
+	margin-left: 10%;
+}
+.leftBarTitle a{
+	color: darkgray;
+	font-size: 14px;
+}
+.borderRightWrapper{
+	border-right:1px solid #ddd ;
+}
+.panel{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.table{
+	width:100%;
+	text-align: center;
+}
+
+.pages{
+	width:100%;
+	display: block;
+	position: relative;
+	background: green;
+}
+
+.pagination{
+	position: absolute;
+	display: block;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.table tr td{
+	white-space: nowrap; /*规定段落中的文本不进行换行*/
+	overflow: hidden;/*内容会被修剪，并且其余内容是不可见的。*/
+	text-overflow: ellipsis;/*显示省略号来代表被修剪的文本*/	
+}
+
+
+/*修改博客*/
+.contentEdit{
+	width:70%;
+	float:left;
+	margin-left: 10%;
+}
+.form-control{
+	vertical-align:top;/*可以让label的字位于坐上角*/
+	width:100%;
+	resize: none !important;/*输入框不可伸缩*/
+	/*隐藏纵向滚动条*/
+	/*overflow-y: hidden;*/
+}
+
+.note-editable{
+	text-align: left;
+}
+
+a:hover{
+	cursor: pointer;
+}

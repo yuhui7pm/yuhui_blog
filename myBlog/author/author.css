@@ -1,0 +1,226 @@
+*{
+	margin:0;
+	padding: 0;
+	font-family: "楷体";
+	position: relative;
+}
+
+body{
+	background-color:whitesmoke ;
+}
+
+/*第一步：拷贝项目下面生成的 @font-face*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../iconfont/iconfont.eot');
+  src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('../iconfont/iconfont.woff2') format('woff2'),
+      url('../iconfont/iconfont.woff') format('woff'),
+      url('../iconfont/iconfont.ttf') format('truetype'),
+      url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+/*第二步：定义使用 iconfont 的样式*/
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  
+#aboutAuthorWrapper{
+	margin:1% 10%;
+	height: 1000px;
+	width: 80%;
+	opacity: 0.95;
+	/*position: absolute;*/
+	z-index: 99;
+}
+
+#titleWrapper{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 50px;
+	background: white;
+	border-bottom: 1px solid lightgray;
+/*	margin-bottom: 35px;*/
+}
+
+#title{
+	height: 50px;
+	width: 200px;
+	line-height: 50px;
+	background: white;
+	font-size: 20px;
+	box-sizing: border-box;
+	text-align: center;
+
+}
+
+#shareAuthorButton{
+	float: right;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	background-color:#5FCEC0;
+	margin-right: 50px;
+	font-size: 20px;
+	position: relative;
+}
+.shareLogo,.shareAuthor{
+	display: inline-block;
+	font-size: 20px;
+	height: 20px;
+	line-height: 20px;
+}
+
+#shareWrapper{
+	height: 50px;
+	position: absolute;
+	left: 50%;
+	color: white;
+	transform: translateX(-50%);
+}
+
+#shareAuthorButton span{
+	background-color:#5FCEC0;
+}
+
+/*个人介绍*/
+#recommend{
+	position: relative;
+	background: white;
+}
+#recommend p{
+	font-size: 20px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	background: white;
+}
+
+#recommend p:first-child{
+	font-size: 22px;
+	letter-spacing: 5px;
+}
+
+.greenBar{
+	margin:10%;
+	margin-bottom: 0;
+	height: 50px;
+	width: 80%;
+	background:#5FCEC0;
+	top: 84px;
+	position: absolute;
+	z-index: 5;
+	padding-right: 5px;
+	left: -5px;
+}
+
+.part2Bar{
+	margin-top:650px;
+}
+
+#recommendIcon{
+	padding-top: 30px;
+	background:white;
+}
+
+#recommendIcon img{
+	border-radius: 50%;
+}
+
+#recommend input{
+	display: block;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+
+/*第二部分技能树*/
+#myskill{
+	margin-top: 30px;
+	background: white;
+}
+
+#mySkill p:first-child{
+	/*margin-top:50px;*/
+	text-align: center;
+}
+
+#mySkill p{
+	font-size: 22px;
+	letter-spacing: 5px;
+	background: white;
+	
+}
+
+/*进度条*/
+.item{
+	height: 35px;
+	width:700px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	line-height: 35px;
+	text-align: center;
+}
+section{
+	padding-top: 30px;
+	background: white;
+	
+}
+.itemContent{
+	height: 35px;
+	width: 130px;
+	background: white;
+}
+.progress{
+	height: 25px;
+	width: 555px;
+}
+
+.progressBar{
+	display: inline-block;
+	width:76%;
+	height: 100%;
+	background: lightseagreen;
+	float: left;
+	box-shadow: 0px 0px 1px 0px;
+	line-height: 25px;
+	text-align: right;
+}
+
+.progressBar2{
+	width:65%;
+	background: indianred;
+}
+
+.progressBar3{
+	width:72%;
+	background: deepskyblue;
+}
+
+.progressBar4{
+	width:74%;
+	background: blueviolet;
+}
+
+.progressBar5{
+	width:67%;
+	background: violet;
+}
+
+.progressBar6{
+	width:82%;
+	background: pink;
+}
+
+/*#mySkill p:last-child{
+	margin-bottom: 50px;
+}*/

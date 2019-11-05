@@ -1,0 +1,191 @@
+/*配置iconfont*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../iconfont/iconfont.eot');
+  src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('../iconfont/iconfont.woff2') format('woff2'),
+      url('../iconfont/iconfont.woff') format('woff'),
+      url('../iconfont/iconfont.ttf') format('truetype'),
+      url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+html{
+	margin:0;
+	padding: 0;
+	font-family: "楷体";
+}
+
+a{
+	text-decoration: none;
+	cursor: default;
+}
+
+#RegLogWrapper{
+	height: 500px;
+	width: 400px;
+	margin: 0 auto;
+	border: 1px solid darkgray;
+	position: relative;
+	margin-top:100px;
+}
+
+#topBackground{
+	width: 100%;
+	height: 100px;
+	background: deepskyblue;
+	line-height: 100px;
+	text-align: center;
+}
+
+#LoginBar{
+	display: flex;
+	justify-content:space-between
+}
+
+#LoginBar span{
+	display: inline-block;
+	width: 33%;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	background: goldenrod;
+}
+
+#LoginBar span:first-child{
+	background: deeppink;
+}
+
+#Login{
+	margin: 5% 15%;
+	/*display: none;*/
+}
+
+#account,#pass,#vericationCode,#loginButton,#verification{
+	margin-bottom: 5%;
+}
+
+
+
+.logResButton{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: deepskyblue;
+	border-radius: 5px;
+	color: white;
+}
+
+.regButton{
+	margin: 0 auto;
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: deepskyblue;
+	border-radius: 5px;
+	color: white;
+}
+
+#verification{
+	display:none;
+}
+
+/*第三方平台登陆*/
+#otherLogin{
+	position: absolute;
+	left:50%;
+	transform:translateX(-50%);
+	bottom: 50px;
+}
+
+.wechatLogin{
+	color: red;
+}
+
+/*注册界面*/
+#register{
+	margin:5%;
+	display: none; 
+}
+
+#register div{
+	margin-bottom: 5%;
+}
+
+
+/*注册结果的信息*/
+.registerResult{
+	position:absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	color: lightseagreen;
+	text-align: center;
+	width: 250px;
+}
+
+/*注册时的提示信息*/
+.tip{
+	color: red;
+	font-size:14px;
+}
+
+
+/*登陆*/
+.inputContext input{
+	border-bottom: 1px solid #dbdbdb;  	
+	border-top:none;  
+	border-left:none;  
+	border-right:none;  
+	outline: none;
+	width: 100%;
+	font-size: 18px;
+	font-family: "楷体";
+}
+
+#account{
+	margin-top: 40px;
+	margin-bottom: 25px;
+}
+
+.loginMode{
+	margin-bottom: 50px;
+}
+
+#LoginBar{
+	font-size: 18px;
+}
+
+/*注册*/
+#register{
+	margin: 5% 15%;
+}
+#register input{
+	border-bottom: 1px solid #dbdbdb;  	
+	border-top:none;  
+	border-left:none;  
+	border-right:none;  
+	outline: none;
+	
+	width: 100%;
+	font-size: 18px;
+	font-family: "楷体";
+
+}
+
+.phone{
+	margin-top: 40px;
+}
+
+.regButton{
+	margin-top: 30px;
+}

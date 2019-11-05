@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关于作者</title>
+		<link rel="shortcut icon" href="./img/home/icon_hui.png"/>
+		<link rel="bookmark" href="./img/home/icon_hui.png" />
+		
+		<!--引入css文件-->
+		<link rel="stylesheet" href="author/author.css" />
+		<link rel="stylesheet" href="./topComponent/topComponent.css" />
+		<link rel="stylesheet" href="./bottom/bottom.css" />
+		
+		<!--引入js文件-->
+    	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+    	<script type="text/javascript" src="writeBlog/blogsAll.js"></script>
+		<script type="text/javascript" src="author/author.js" ></script>
+		<script src="./topComponent/topComponent.js"></script>
+		<script src="./bottom/bottom.js"></script>
+	</head>
+	<body>
+		<!--两根绿色bar-->
+		<p class="greenBar"></p>
+		<p class="greenBar part2Bar"></p>
+		
+		<div id="aboutAuthorWrapper">
+			<div id="titleWrapper">
+				<div id="title">关于作者</div>
+				<div id="shareAuthorButton">
+					<span id="shareWrapper">
+						<span class="iconfont shareLogo">&#xe609;</span>
+						<span class="shareAuthor">分享</span>
+					</span>
+				</div>
+			</div>
+			
+			<div id="recommend">
+				<p>作者简介</p>
+				<p id="recommendIcon" style="height: 120px;">
+					<img src="https://qiniu.cuiqingcai.com/wp-content/uploads/2015/11/20151022175857.jpg" style="width: 100px;height: 100px;"/>
+				</p>
+				<p>白小晖</p>
+				<p>爱生活、爱书画、爱运动、爱音乐、爱设计、爱编程。</p>
+				<p>人生百态，笑口常开，秉承自我，谨慎独行。静觅，静静寻觅生活的美好。</p>
+				<input id="learnMore" type="button" value="了解更多" style="width: 310px;background-color: rgb(245, 138, 135); height: 40px; border: none; 
+				 	font-size: 20px; letter-spacing: 2px;" onmouseover="this.style.backgroundColor='rgb(252, 125, 121)'" onmouseout="this.style.backgroundColor='#F58A87'"
+				 >
+			</div>
+			<div id="mySkill">
+				<p style="height: 50px;line-height: 50px;padding-top: 35px;">我的技能树</p>
+				<section>
+					<div class="item">
+						<div class="itemContent">HTML/CSS/JS</div>
+						<div class="progress">
+							<span class="progressBar">74%&nbsp;</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="itemContent">C/C++</div>
+						<div class="progress">
+							<span class="progressBar progressBar2">65%&nbsp;</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="itemContent">PHP/MYSQL</div>
+						<div class="progress">
+							<span class="progressBar progressBar3">72%&nbsp;</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="itemContent">JAVA</div>
+						<div class="progress">
+							<span class="progressBar progressBar4">74%&nbsp;</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="itemContent">PYTHON</div>
+						<div class="progress">
+							<span class="progressBar progressBar5">67%&nbsp;</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="itemContent">MATLAB</div>
+						<div class="progress">
+							<span class="progressBar progressBar6">82%&nbsp;</span>
+						</div>
+					</div>
+				</section>
+				
+				<p style="text-align: center;">
+					<input id="oporation" type="button" value="申请友链" style="width: 310px; margin: 0px auto 20px; background-color: rgb(3, 202, 177);height: 40px; border: none;font-size: 20px; letter-spacing: 2px;"
+						onmouseover="this.style.backgroundColor='rgb(7, 179, 158)'" onmouseout="this.style.backgroundColor='rgb(3, 202, 177)'">
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

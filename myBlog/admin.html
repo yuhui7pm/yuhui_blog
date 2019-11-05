@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>管理员界面</title>		
+		<link rel="shortcut icon" href="./img/home/icon_hui.png"/>
+		<link rel="bookmark" href="./img/home/icon_hui.png" />
+		<link rel="stylesheet" href="summernote/bootstrap.css"/>
+		<link rel="stylesheet" href="summernote/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" href="blogComments/jquery.sinaEmotion.css" />	<!--引入sina表情包-->
+    	<link rel="stylesheet" href="admin/admin.css" />
+		<link rel="stylesheet" href="summernote/summernote.css" />
+		
+    	<script type="text/javascript" src="js/jquery-2.1.0.js"></script> 
+		<script type="text/javascript" src="blogComments/jquery.sinaEmotion.js"></script>	<!--引入sina表情包-->
+	</head>
+	
+	<body>
+		<!--顶部-->
+		<nav class="navbar navbar-default" style="margin: 0;">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="./index.html">
+		      	<img src="img/admin/blogLogo.png" width="100px" height="30px"/>
+		      </a>
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+		        <!--<li><a href="#"></a></li>-->
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li class="adminLogin"><a href="#">登录</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li class="adminQuit"><a href="#">退出	</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		
+		<div class="leftSideBar">
+			<ul id="main-nav" class="nav nav-tabs nav-stacked borderRightWrapper" style="height: 100%;width: 10%;float: left;">
+	            <li class="leftBarTitle">
+	                <a style="color:#337AB7" >
+	                    <i class="glyphicon glyphicon-th-large"></i>
+	                   	后台管理
+	                </a>
+	            </li>
+	            <li>
+	                <a style="color:orangered" class="articleManage">
+	                    <i class="glyphicon glyphicon-credit-card"></i>
+	                    	文章管理
+	                </a>
+	            </li>
+	            <li>
+	                <a class="rightBorder commentManage">
+	                    <i class="glyphicon glyphicon-globe"></i>
+	                    	评论管理
+	                    <!--<span class="label label-warning pull-right">5</span>-->
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse" class="rightBorder">
+	                    <i class="glyphicon glyphicon-cog"></i>
+	                    	系统管理
+	                    <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+	                </a>
+	                <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
+	                    <li><a href="mytask"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+	                    <li><a href="#"><i class="glyphicon glyphicon-th-list"></i>菜单管理</a></li>
+	                    <li><a href="#"><i class="glyphicon glyphicon-asterisk"></i>角色管理</a></li>
+	                    <li><a href="#"><i class="glyphicon glyphicon-edit"></i>修改密码</a></li>
+	                    <li><a href="#"><i class="glyphicon glyphicon-eye-open"></i>日志查看</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+        </div>        
+
+		
+		<div class="adminContentWrapper">
+			<ol class="breadcrumb">
+			  <li><a href="./index.html">首页</a></li>
+			  <li class="active">后台管理</li>
+			</ol>
+			<!--带有列表组的面板-->
+			<div class="panel panel-default">
+				 <!--Default panel contents--> 
+	  			<div class="panel-heading"  style="font-weight: bold;">博客文章管理</div>
+				<!--斑马表格-->
+				<table class="table table-striped" style='table-layout:fixed;'><!--table-layout列宽由表格宽度和列宽度设定。-->
+					<thead>
+						<tr>
+							<td>id</td>
+							<td>文章标题</td>
+							<td>文章简介</td>
+							<td>创建时间</td>
+							<td colspan="2">操作</td>
+						</tr>
+					</thead>
+					<tbody class="blogLists">
+					</tbody>
+				</table>
+			</div>
+			
+			<!--分页-->
+			<nav aria-label="Page navigation" class="pages">
+			  <ul class="pagination">
+			    <li class="arrowForward">
+			      <a aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
+			
+			    <li class="arrowBackWard">
+			      <a aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			  </ul>
+			</nav>
+		</div>
+	</body>
+	<script src="admin/admin.js"></script>
+	<script type="text/javascript" src="summernote/bootstrap.js"></script>
+	<script type="text/javascript" src="summernote/summernote.js"></script>
+</html>

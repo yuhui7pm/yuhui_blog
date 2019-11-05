@@ -1,0 +1,38 @@
+*{
+	margin:0;
+	padding: 0;
+}
+#text-title{
+	width: 300px;
+	height: 30px;
+	line-height:30px ;
+	font-size: 14px;
+	outline: none;
+	border-radius: 3px;
+	border: 1px solid gray;
+	margin-top: 20px;
+}
+
+#writeBlogWrapper{
+	position: relative;
+	margin: 0 15%;
+	width: 720px;
+}
+
+.content-wrapper{
+	position: relative;
+	margin:20px 0;
+	margin-top: 10px;
+}
+
+#text-content{
+	width:560px;
+	font-size: 14px;
+	outline: none;
+	border-radius: 3px;
+	border: 1px solid gray;
+	resize: none;
+	overflow-y: hidden;
+	min-height: 150px;
+}
+

@@ -1,0 +1,267 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+ul li{
+	list-style: none;
+}
+
+/*配置iconfont*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../iconfont/iconfont.eot');
+  src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('../iconfont/iconfont.woff2') format('woff2'),
+      url('../iconfont/iconfont.woff') format('woff'),
+      url('../iconfont/iconfont.ttf') format('truetype'),
+      url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+	text-decoration: none;
+}
+
+#tipBar,.mainBody{
+	margin: 0 10%;
+}
+
+/*part0.最开始的banner*/
+#banner{
+	height: 120px;
+	width: 100%;
+	background: #D56464;
+	display: flex;
+	justify-content: center;
+	align-items: middle;
+}
+
+
+#banner span{
+	font-family:"楷体";
+	font-size: 40px;
+	line-height: 100%;
+	padding-top: 3%;
+	font-weight: bold;
+	transition: letter-spacing 1.5s;
+	/*呼吸灯效果*/
+	-moz-animation:breath 5s infinite ;
+	-webkit-animation: breath 5s infinite;
+	-ms-animation: breath 5s infinite;
+	animation: breath 5s infinite;
+	
+	/*颜色渐变*/
+	background-image:-webkit-linear-gradient(top,#556B2F,#00FFFF); 
+    background-image: -moz-linear-gradient(top,#556B2F,#00FFFF);
+    -webkit-text-fill-color:transparent; 
+    -webkit-background-clip:text; 
+    background-clip: text;
+}
+
+/*hover的时候让文字散开*/
+#banner span:hover{
+	letter-spacing: 12px;
+}
+
+@-moz-keyframes breath{
+	from{opacity: 0.6;}
+	50%{opacity: 1;}
+	to{opacity: 0.6;}
+}
+@-ms-keyframes breath{
+	from{opacity: 0.6;}
+	50%{opacity: 1;}
+	to{opacity: 0.6;}
+}
+@-webkit-keyframes breath{
+	from{opacity: 0.6;}
+	50%{opacity: 1;}
+	to{opacity: 0.6;}
+}
+@keyframes breath{
+	from{opacity: 0.6;}
+	50%{opacity: 1;}
+	to{opacity: 0.6;}
+}
+
+/*part1.顶部tabbar操作*/
+#topBar{
+	width:100%;
+	height:50px;
+	border-bottom: 1px solid lightgray;
+	/*-webkit-box-shadow: 0px 0px 8px 0px lightgray;
+	box-shadow: 0px 0px 8px 0px lightgray;*/
+	background: #4a4a4a !important;
+	line-height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+/*part0.wrapper*/
+.wrapper{
+	width:80%;
+	height:100%;
+	margin:0% 10%;
+	/*text-align: center;*/
+	font-size: 20px;
+	display: flex;
+	align-items:center; 
+	color:#333;
+	/*overflow: hidden;*/
+	clear: both;
+	background:#4a4a4a !important;
+}
+
+#content{
+	height: 100%;
+	width:70%;
+	display: flex;
+	align-items: center;
+	background:#4a4a4a !important;
+	
+}
+.tapBar{
+	text-align: left;
+	display:block;
+	width:16%;
+	height: 100%;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+}
+.tapBar:active{
+	background:#D56464;
+}
+
+.tapBar:not(:first-child){
+	background:#4a4a4a;
+}
+
+/*#default{
+	background:#D56464;
+}*/
+
+#content a:hover{
+	background:#D56464;
+}
+
+#content a:hover{
+	cursor: pointer;
+}
+
+.Input{
+	height: 34px;
+	border:1px solid whitesmoke;
+	border-radius:17px;
+	background: white;
+	display: flex;
+	align-items: middle;
+	justify-content: flex-start;
+	overflow: hidden;
+	clear: both;
+}
+
+.searchInfo{
+	float: right;
+	outline: none;
+	border: none;
+	border-radius:17px;
+	transition: all 0.6s;
+	background: white;
+	padding-left: 10px;
+}
+
+.searchInfo:focus{
+	margin-right:50px;
+}
+.searchIcon{
+	height:34px;
+	width:34px;
+	border-radius:17px;
+	float: right;
+	outline: none;
+	background-color: darkslategray;
+}
+
+/*part1.5 tipBar*/
+#tipBar{
+	position: relative;
+	height: 30px;
+	background: white;
+	border: 1px solid floralwhite;
+	border-top: none;
+	display: flex;
+	clear: both;
+	cursor:default;
+}
+
+#tipBar div{
+	background:white;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#tipBar div span{
+	background:white;
+}
+
+.contribute{
+	margin-left: 60%;
+}
+
+.hasLogined{
+	margin-left: 70%;
+}
+.writeBlog{
+	margin-left: 80%;
+}
+
+
+.tapBar li a{
+	display: inline-block;
+	color:white;
+	width: 100%;
+	height: 50px;
+}
+
+#content ul:hover{
+	background:#D56464;
+}
+
+/*下拉菜单*/
+.bar2{
+	position: absolute;
+	left: 16%;
+	top: 0;
+	z-index: 99999;
+}
+
+
+
+/*顶部bar轮播图*/
+.notice {
+	clear: both;
+    min-width: 300px;/*单行显示，超出隐藏*/
+    height: 31px;/*固定公告栏显示区域的高度*/
+    background-color: #b3effe;
+    overflow: hidden;
+    margin-left: 140px;
+}
+.notice ul li{
+	color: #00a67c;
+    list-style: none;
+    line-height: 31px;
+    /*以下为了单行显示，超出隐藏*/
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

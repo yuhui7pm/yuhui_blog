@@ -1,0 +1,13 @@
+.deleteComment,.deleteSecondComment{
+	color:cornflowerblue;
+	display: none;		
+}
+
+
+.deleteComment:hover{
+	cursor: pointer;
+}
+
+.commentContextWrapper:hover{
+	cursor: default;
+}

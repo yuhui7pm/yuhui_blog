@@ -1,0 +1,391 @@
+/*初始化设置*/
+*{
+	margin: 0px;
+	padding:0px;
+}
+
+html,body{
+	/*height:100%;*/
+	background-color: #f5f6f7;
+	font-family: "楷体";
+}
+
+
+/*配置iconfont*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../iconfont/iconfont.eot');
+  src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('../iconfont/iconfont.woff2') format('woff2'),
+      url('../iconfont/iconfont.woff') format('woff'),
+      url('../iconfont/iconfont.ttf') format('truetype'),
+      url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*part2.轮播图加寄语*/
+#bannerBoard{	
+	width:100%;
+	height:300px;
+	margin-bottom: 0;
+	/*clear: both;*/
+	/*float: left;*/
+	background: white;
+	/*position: relative;*/
+}
+
+/*#bannerBoard img{
+	width:75%;
+	height:100%;
+}*/
+
+
+#blackBoard{
+	/*width:25%;*/
+	margin-bottom: 20px;
+	position: relative;
+}
+#blackBoard span{
+	position: absolute;
+	z-index: 99;
+	color:white;
+	font-size:16px;
+	top:35%;
+	text-align:justify;
+	margin: 25px;
+	text-indent: 36px;
+}
+
+#blackBoard h1{
+	position: absolute;
+	z-index: 99;
+	color:white;
+	left:50%;
+	transform:translate(-50%,0);
+	top:20%;
+}
+
+#Banner{
+	/*margin-top: 40px;*/
+	/*这里被修改了*/
+	width:625px;
+	height:300px;
+	float: right;
+	/*overflow: hidden;*/
+}
+
+.bannerClass{
+	transform-origin: 50% 50% 0;
+	perspective: auto;
+	transform-style:preserve-3d;
+	perspective: 50000px;
+	background: green;
+	transition:2s;
+}
+
+.orientation1{
+	width:100%;
+	height: 100%;
+	background-image: url(../img/banner/coder.png);
+	background-size: 100% 100%;
+	transform:rotateZ(180deg) translateY(0px) translateZ(150px) rotateZ(180deg);
+	background-repeat: no-repeat;
+}
+.orientation2{
+	width:100%;
+	height: 100%;
+	background-image: url(../img/banner/lion.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transform:translateZ(-150px) translateY(-300px) rotateZ(180deg) rotateY(180deg);
+}
+.orientation3{
+	transform-origin: center;
+	width:100%;
+	height: 100%;
+	background-image: url(../img/banner/type.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	transform:rotateX(90deg) translateZ(750px);
+}
+.orientation4{
+	width:100%;
+	height: 100%;
+	background-image: url(../img/banner/webDevelopment.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transform:translateY(-750px) rotateX(90deg) rotateZ(180deg) rotateY(180deg);
+}
+
+.button_left{
+	height:50px;
+	width:50px;
+	position: absolute;
+	display: block;
+	background: black;
+	opacity: 0.2;
+	border-radius: 25px;
+	z-index: 99;
+	background-image: url(../img/banner/button_left.svg);
+	background-repeat:no-repeat ;
+	background-size:70% 70%;
+	top: 150px;
+	left: 23%;
+	transform: translate(0%,-50%);
+	background-position: center;
+	display: none;
+}
+
+.button_right{
+	height:50px;
+	width:50px;
+	position: absolute;
+	display: block;
+	background: black;
+	opacity: 0.2;
+	border-radius: 25px;
+	margin-left: 450px;
+	top: 150px;
+	right: 5%;
+	z-index: 99;
+	background-image: url(../img/banner/button.svg);
+	transform: translate(0,-50%);
+	background-repeat:no-repeat ;
+	background-size:70% 70%;
+	background-position: center;
+	display: none;
+}
+
+.button_left:hover,.button_right:hover{
+	opacity: 0.5;
+}
+
+.button_left:active,.button_right:active{
+	background: indianre;
+}
+
+#bannerWrapper{
+	position: relative;
+	/*margin-left: -1%;*/
+}
+#album{
+	/*display: flex;*/
+	/*align-items: center;*/
+	float: left;
+	width: 200px;
+}
+
+#album img{
+	height: 24%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border:3px solid white;
+	filter:opacity(0.7);
+}
+
+#album img:first-child{
+	filter:opacity(1);
+}
+
+#album img:hover{
+	filter: opacity(1) !important;
+	cursor: pointer;
+}
+
+/*part3.文章列表*/
+#article_rank_wrapper{
+	padding: 2%;
+	background-color: white;
+	box-sizing: border-box;
+}
+#title{
+	font-size: 22px;
+	font-weight: bold;
+	color:mediumseagreen;
+	padding-bottom: 10px;
+	border-bottom: 1px solid mediumseagreen;
+}
+
+#contextsWrapper{
+	margin-top: 10px;
+	height: 100%;
+	color:mediumseagreen;
+}
+
+.context{
+	margin-top: 10px;
+	height:30px;
+/*	background: yellow;*/
+	width: 100%;
+	/*overflow: hidden;*/
+	font-size: 20px;
+	
+}
+
+#number{
+	display: inline-block;
+	width:25px;
+	height:20px;
+	background: #f78585;
+	line-height: 20px;
+	text-align: center;
+	top: 50%;
+	color: white;
+}
+#like_start{
+	float: right;
+	color: #f78585;
+	font-family: "楷体";
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+}
+
+#article_rank{
+	overflow: hidden;
+	width: 100%;
+	margin: 1% 0;
+	/*margin-left: 10%;*/
+	/*display: flex;
+	justify-content: space-between;*/
+}
+
+#article_rank_wrapper{
+	/*width:73%;*/
+	right: 2%;
+}
+
+.wrapperTopContent{
+	width: 58%;
+	margin-left: 10%;
+}
+
+
+/*正文以及右侧的广告栏*/
+#middle_context{
+	width: 80%;
+	margin:1% 10%;
+	/*height: 100%;*/
+	/*display: flex;
+	justify-content: space-between;*/
+	/*background: gray;*/
+	clear: both;
+	overflow: visible;
+}
+.articles{
+	width: 100%;
+	min-height: 1000px;
+	clear: both;
+	overflow: visible;
+	/*position: absolute*/
+}
+
+#advertisements{
+	width: 25%;
+	float: right;
+	margin-top: 0;
+}
+
+#ad1{
+	height: 400px;
+	margin-bottom: 10%;
+	background: white;
+	/*border: 1px solid gray;*/
+}
+
+.messWrapper{
+	width: 100%;
+	height: 40px;
+	background: white;
+}
+
+
+/*用户评论*/
+.messTitle{
+	height: 45%;
+	width: 30%;
+	margin-left: 15px;
+	font-size: 18px;
+	border-bottom: 2px solid black;
+	transition: 0.4s ease-in-out;
+	/*padding-top: -10px;*/
+}
+
+.messTitle:hover{
+	width: 40%;
+	border-bottom: 2px solid darkred;
+}
+
+.rightTriangle{
+	height: 50%;
+	background: url(../img/home/rightTriangle.png) no-repeat; 
+	background-size: contain;
+}
+
+.comment{
+	width: 100%;
+	height: 70px;
+	display: flex;
+	padding: 10px;
+	box-sizing: border-box;
+	border-top: 1px solid lightgray;
+	cursor: pointer;
+}
+
+.comment:hover{
+	background: floralwhite;
+}
+
+.commentWrapper{
+	width: 100%;
+	height: 50px;
+	/*background: beige;*/
+	position: relative;
+}
+
+.userComment{
+	margin-top:5%;
+}
+.UserMess{
+	position: absolute;
+	font-size: 13px;
+	color: lightgray;
+	bottom: 0;
+}
+
+
+
+/*点击按钮,加载更多*/
+#more{
+	width: 100%;
+	height:40px;
+	color: white;
+	background: green;
+	border-radius: 20px;
+	line-height: 40px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	opacity: 0.6;
+}
+
+#more:active{
+	opacity: 0.8;
+}
+
+
+.thirdLogin{
+	font-size: 40px !important;
+}
+
+
