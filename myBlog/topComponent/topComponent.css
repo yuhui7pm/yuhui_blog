@@ -110,12 +110,10 @@ a{
 	width:80%;
 	height:100%;
 	margin:0% 10%;
-	/*text-align: center;*/
 	font-size: 20px;
 	display: flex;
 	align-items:center; 
 	color:#333;
-	/*overflow: hidden;*/
 	clear: both;
 	background:#4a4a4a !important;
 }
@@ -203,27 +201,18 @@ a{
 	cursor:default;
 }
 
-#tipBar div{
-	background:white;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+#tipBar>div{
+	float: right;
 }
-#tipBar div span{
-	background:white;
+#tipBar>div span{
+	line-height: 30px;
 }
-
-.contribute{
-	margin-left: 60%;
+#tipBar>div:first-child{
+	width: 100px !important;
 }
-
-.hasLogined{
-	margin-left: 70%;
+.bulletinButton{
+	width:90px;	
 }
-.writeBlog{
-	margin-left: 80%;
-}
-
 
 .tapBar li a{
 	display: inline-block;
@@ -235,25 +224,21 @@ a{
 #content ul:hover{
 	background:#D56464;
 }
-
 /*下拉菜单*/
 .bar2{
 	position: absolute;
 	left: 16%;
 	top: 0;
-	z-index: 99999;
+	/*z-index: 99999;*/
 }
-
-
-
 /*顶部bar轮播图*/
 .notice {
 	clear: both;
-    min-width: 300px;/*单行显示，超出隐藏*/
     height: 31px;/*固定公告栏显示区域的高度*/
     background-color: #b3effe;
     overflow: hidden;
-    margin-left: 140px;
+    width:calc(100% - 90px * 3 - 100px);
+    background-color:white ;
 }
 .notice ul li{
 	color: #00a67c;
@@ -264,4 +249,5 @@ a{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-indent: 20px;
 }

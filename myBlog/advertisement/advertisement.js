@@ -29,14 +29,28 @@ $(document).ready(()=>{
     //反馈意见的点击
     feedbackTypeChange();
     
-    //当hover微信QRCode时，display为block
-    var weixin = document.getElementById('wechat');
+    //事件委托监听onmouseenter和onmouseleave事件,实现二维码hover显示
+    var contactMe = document.getElementById('contact');
     var wechatQRCode = document.getElementsByClassName('QrCode')[0];//微信二维码
-	weixin.onmouseenter = ()=>{
-    	wechatQRCode.style.display = 'block'
+    contactMe.addEventListener('mouseover',qrcodeShow);
+    contactMe.addEventListener('mouseout',qrcodeHide);
+   	function qrcodeShow(event){
+    	event = event||window.event;
+     	var target = event.target||event.srcElement
+		var spanIndex = $('#contact span').index(target);
+		if(spanIndex>-1){
+			wechatQRCode.classList.add('Qrcode'+(spanIndex+1));
+     		wechatQRCode.style.display = 'block';
+		}
     }
-    weixin.onmouseleave = ()=>{
-    	wechatQRCode.style.display = 'none'
+    function qrcodeHide(event){
+     	event = event||window.event;
+     	var target = event.target||event.srcElement
+     	var spanIndex = $('#contact span').index(target);
+		if(spanIndex>-1){
+			wechatQRCode.classList.remove('Qrcode'+(spanIndex+1));
+     		wechatQRCode.style.display = 'none';
+		}
     }
 	
 	//点击反馈按钮，显示出反馈的方框
@@ -108,7 +122,6 @@ function advertisementModel(){
 		<div id="advertisements" style="width:25%;float:right">
 				<!--右边的每日寄语-->
 				<div id="blackBoard">
-					<img src="./img/home/blackboard.png" class="boardImg" width="100%"/>
 					<h1 id="title">每日一语</h1>
 					<span>真正的程序员的程序不会在第一次就正确运行，但是他们愿意守着机器进行若干个30小时的调试改错。</span>
 				</div>
@@ -142,11 +155,8 @@ function advertisementModel(){
 							<span></span>
 						</div>
 					</div>
-					<div class="QrCode" style="margin-left: 1%;">
-						<img src="./img/home/wechatQrCode.jpg" width="90px" height="90px"/>
-						<div style="margin-left: 35%;">
-							<img src="./img/home/triangle.png" width="30%" height="10%"/>
-						</div>
+					<div class="QrCode"">
+						<div class='triangle'></div>
 					</div>
 				</div>
 			
@@ -176,7 +186,7 @@ function advertisementModel(){
 					</div>
 					<div id="wechatPacket"></div>
 					<div id="zhifubao"></div>
-					<div style="margin:2% 17%;margin-left: 20%;text-indent: 16px;line-height: 22px;">打赏的都是天使，打赏了的人都会变美~</div>
+					<div style="margin:20px auto 0;width:70%;line-height: 22px;">打赏的都是天使，打赏了的人都会变美~</div>
 				</div>
 			</div>
 		</div>
@@ -322,8 +332,7 @@ function leavingMessage(){
 						<div class="commentWrapper">
 							<div class="userComment">${AnalyticEmotion(value.firstcontext)}</div>
 							<div class="UserMess">
-								<span>${value.firstcommentor}</span>
-								<span>评论于：${dataFormated(value.firstcommenttime)}</span>
+								${value.firstcommentor} 评论于：${dataFormated(value.firstcommenttime)}
 							</div>
 						</div>
 					</div>
@@ -379,4 +388,11 @@ function addZero(num){
         num = '0'+num;
     }
     return num;
+}
+
+
+//卸载页面时,取消监听器
+window.onunload = function(){
+	document.getElementById('contact').removeEventListener('mouseover',qrcodeShow);
+	document.getElementById('contact').removeEventListener('mouseout',qrcodeHide);
 }

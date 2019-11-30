@@ -61,16 +61,15 @@ function topModel(path){
 				        <li>祝你们在本博客里都有所收获!</li>
 				    </ul>
 				</div>
-				
-				<div class="contribute">
+				<div class="contribute bulletinButton">
 					<span class="iconfont">&#xe620;</span>
 					<span class="explain username" style="color:#00a67c">${getUsername()}</span>
 				</div>
-				<div class="hasLogined">
+				<div class="hasLogined bulletinButton">
 					<span class="iconfont">&#xe728;</span>
 					<span class="explain loginStatus" style="color:#00a67c">退出</span>
 				</div>
-				<div class="writeBlog">
+				<div class="writeBlog bulletinButton">
 					<span class="iconfont">&#xe6e1;</span>
 					<span style="color:#00a67c">发表文章</span>
 				</div>
@@ -104,10 +103,10 @@ $(()=>{
 
 function tapTwo(){
 	$('.bar2').hover(()=>{
-		$('#topBar').css('overflow','visible');
+		$('#topBar').css({'overflow':'visible','z-index':99999});
 		ListHover();//下拉菜单的某一项被hover的时候
 	},()=>{
-		$('#topBar').css('overflow','hidden');
+		$('#topBar').css({'overflow':'hidden','z-index':1});
 	})
 }
 

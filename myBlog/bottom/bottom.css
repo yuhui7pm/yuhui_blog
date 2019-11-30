@@ -15,24 +15,25 @@
 	justify-content: space-around;
 	align-items: center;
 	height: 100px;
+	min-width: 800px;
 }	
 
 .aboutWeb{
-	width: 40%;
+	width: 550px !important;
+	height: 100px;
 	text-align: justify;
-
 }
 .aboutWeb p{
 	background: lightgray !important;
 	font-size: 16px;
 	line-height: 25px;
+	width: 100%;
 }	
 
 .aboutWebRight{
-	/*height: 100%;*/
-	margin-left: -30%;
+	width: 200px;
+	height: 100%;
 	background: lightgray !important;
-	
 }
 .aboutWebRight img{
 	margin-top:25px;
@@ -47,15 +48,6 @@
 .dynamicLetters{
 	width:200px;
 }
-.aboutWeb{
-	/*margin-bottom: 5px;*/
-}
-
-/*测试用的
-.changeLetters span{
-	margin-right: 5px;
-	background: green;
-}*/
 
 h3{
 	background: lightgray !important;

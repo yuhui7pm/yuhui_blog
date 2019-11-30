@@ -30,21 +30,26 @@ const blogRouter = (req,res)=>{
 
     //0.首页获取全部博客
     if(method === 'GET' && req.path === '/api/blog/lists'){
-        const cookie = req.headers.cookie;
-        let getUserId;
-        if(cookie.split('=')[1]){
-            getUserId = cookie.split('=')[1];
-        }else{
-            getUserId = null;
-        };
-        return get(getUserId).then(dat=>{
-            const usernameAuto = dat.username;
-            let userid = {"usernameAuto":usernameAuto};
-            const result = getAllBlogs();
-            return result.then(lists=>{
-                return new successModel({...lists,userid});
-            })
-        });
+        // const cookie = req.headers.cookie;
+        // let getUserId;
+        // if(cookie.split('=')[1]){
+        //     getUserId = cookie.split('=')[1];
+        // }else{
+        //     getUserId = null;
+        // };
+        // return get(getUserId).then(dat=>{
+        //     const usernameAuto = dat.username;
+        //     console.log('username:',usernameAuto);
+        //     let userid = {"usernameAuto":usernameAuto};
+        //     const result = getAllBlogs();
+        //     return result.then(lists=>{
+        //         return new successModel({...lists,userid});
+        //     })
+        // });
+        const result = getAllBlogs();
+        return result.then(lists=>{
+            return new successModel({...lists});
+        })
     }
 
     //0.5 获取指定类型的博客

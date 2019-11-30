@@ -10,17 +10,16 @@ $(()=>{
 		dataType:'json',
 		contentType: "application/json",
 		success:(result)=>{
-			console.log("result",result)
-			user = result.data["userid"].usernameAuto;//从cookie中获得用户名
-			console.log('user',user);
-			const userIcon = window.parent.document.getElementsByClassName("contribute")[0];
-			if(user&&user!="undefined"){
-				$(".loginStatus", window.parent.document).html('退出')
-				$(".username", window.parent.document).html(user)
-			}
+			console.log(result)
+//			user = result.data["userid"].usernameAuto;//从cookie中获得用户名
+//			const userIcon = window.parent.document.getElementsByClassName("contribute")[0];
+//			if(user&&user!="undefined"){
+//				$(".loginStatus", window.parent.document).html('退出')
+//				$(".username", window.parent.document).html(user)
+//			}
 			let clickNum = 1;
 			addLists(result,clickNum);//点击按钮，加载更多
-			detailClick(user);//当文章被点击的时候，根据博客Id跳转到详情页
+//			detailClick(user);//当文章被点击的时候，根据博客Id跳转到详情页
 		},
 		error:(err)=>{
 			console.error(err);
@@ -74,7 +73,7 @@ function appendArticle(item){
 			<div class="picture" style="background-image:url(/static/blogIcon/image_${item.author}_${item.createtime}.jpg)"></div>
 			<div class="artical_right">
 				<div class="title">${item.title}</div>
-				<p class="articleDiscription"></p>
+				<p class="articleDiscription">${item.introduction}</p>
 				<div class="articleBottom">
 					<span class="item" style="height:16px;line-height:16px" style="position:relative;">
 						<img src='../img/home/label.svg' height="16px" style="position:absolute;"/>
@@ -99,21 +98,21 @@ function appendArticle(item){
 	`)
 	
 	//下面是博客简介多行省略
-	var context = item.introduction;//博客简介
-	var rowNum = 35;//规定每行最多显示多少个	
-	if(context){
-		var index = Math.ceil(context.length/rowNum);//得到行数
-		//超出5行，最多显示5行
-		if(index>5){
-			context = context.substring(0,rowNum*5-3)+'...';
-			index = 5;
-		}
-		for(var i =0;i<index;i++){
-			var end = context.length<(i+1)*rowNum?context.length:(i+1)*rowNum;
-			var con = context.substring(i*rowNum,end);
-			$('.'+item.id).find('.articleDiscription').append(con+'<br/>');
-		}
-	}
+//	var context = item.introduction;//博客简介
+//	var rowNum = 35;//规定每行最多显示多少个	
+//	if(context){
+//		var index = Math.ceil(context.length/rowNum);//得到行数
+//		//超出5行，最多显示5行
+//		if(index>5){
+//			context = context.substring(0,rowNum*5-3)+'...';
+//			index = 5;
+//		}
+//		for(var i =0;i<index;i++){
+//			var end = context.length<(i+1)*rowNum?context.length:(i+1)*rowNum;
+//			var con = context.substring(i*rowNum,end);
+//			$('.'+item.id).find('.articleDiscription').append(con+'<br/>');
+//		}
+//	}
 }
 
 // 毫秒数转换成标准数据格式

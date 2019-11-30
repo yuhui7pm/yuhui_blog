@@ -31,27 +31,27 @@ html,body{
 }
 
 
+/*导航栏*/
+.bar1{
+	background-color:#D56464;//改变tapBar的颜色
+}
 /*part2.轮播图加寄语*/
 #bannerBoard{	
 	width:100%;
 	height:300px;
 	margin-bottom: 0;
-	/*clear: both;*/
-	/*float: left;*/
 	background: white;
-	/*position: relative;*/
 }
 
-/*#bannerBoard img{
-	width:75%;
-	height:100%;
-}*/
-
-
 #blackBoard{
-	/*width:25%;*/
+	width:100%;
+	height: 240px;
 	margin-bottom: 20px;
 	position: relative;
+	background-image: url(../img/home/blackboard.png);
+	background-repeat: no-repeat;
+	background-size:100% 100%;
+	overflow: hidden;
 }
 #blackBoard span{
 	position: absolute;
@@ -60,26 +60,21 @@ html,body{
 	font-size:16px;
 	top:35%;
 	text-align:justify;
-	margin: 25px;
+	margin: 22px;
 	text-indent: 36px;
-}
-
-#blackBoard h1{
-	position: absolute;
-	z-index: 99;
-	color:white;
-	left:50%;
-	transform:translate(-50%,0);
-	top:20%;
+	margin-top: 15px;
+	
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #Banner{
-	/*margin-top: 40px;*/
-	/*这里被修改了*/
-	width:625px;
+	width:calc(100% - 15% - 5%);
 	height:300px;
 	float: right;
-	/*overflow: hidden;*/
 }
 
 .bannerClass{
@@ -87,7 +82,6 @@ html,body{
 	perspective: auto;
 	transform-style:preserve-3d;
 	perspective: 50000px;
-	background: green;
 	transition:2s;
 }
 
@@ -208,10 +202,22 @@ html,body{
 	background-color: white;
 	box-sizing: border-box;
 }
-#title{
-	font-size: 22px;
+#article_rank_wrapper>#title{
+	font-size: 20px;
 	font-weight: bold;
-	color:mediumseagreen;
+}
+#blackBoard  #title{
+ 	color:white;
+ 	font-size: 22px;
+	font-weight: bold;
+ 	position: absolute;
+	z-index: 99;
+	left:50%;
+	transform:translate(-50%,0);
+	top:20%;
+	width: 90px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	padding-bottom: 10px;
 	border-bottom: 1px solid mediumseagreen;
 }
@@ -290,78 +296,6 @@ html,body{
 	/*position: absolute*/
 }
 
-#advertisements{
-	width: 25%;
-	float: right;
-	margin-top: 0;
-}
-
-#ad1{
-	height: 400px;
-	margin-bottom: 10%;
-	background: white;
-	/*border: 1px solid gray;*/
-}
-
-.messWrapper{
-	width: 100%;
-	height: 40px;
-	background: white;
-}
-
-
-/*用户评论*/
-.messTitle{
-	height: 45%;
-	width: 30%;
-	margin-left: 15px;
-	font-size: 18px;
-	border-bottom: 2px solid black;
-	transition: 0.4s ease-in-out;
-	/*padding-top: -10px;*/
-}
-
-.messTitle:hover{
-	width: 40%;
-	border-bottom: 2px solid darkred;
-}
-
-.rightTriangle{
-	height: 50%;
-	background: url(../img/home/rightTriangle.png) no-repeat; 
-	background-size: contain;
-}
-
-.comment{
-	width: 100%;
-	height: 70px;
-	display: flex;
-	padding: 10px;
-	box-sizing: border-box;
-	border-top: 1px solid lightgray;
-	cursor: pointer;
-}
-
-.comment:hover{
-	background: floralwhite;
-}
-
-.commentWrapper{
-	width: 100%;
-	height: 50px;
-	/*background: beige;*/
-	position: relative;
-}
-
-.userComment{
-	margin-top:5%;
-}
-.UserMess{
-	position: absolute;
-	font-size: 13px;
-	color: lightgray;
-	bottom: 0;
-}
 
 
 
