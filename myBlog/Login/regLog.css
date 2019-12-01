@@ -22,6 +22,7 @@ html{
 	margin:0;
 	padding: 0;
 	font-family: "楷体";
+	height: 100%;
 }
 
 a{
@@ -30,71 +31,99 @@ a{
 }
 
 #RegLogWrapper{
-	height: 500px;
-	width: 400px;
-	margin: 0 auto;
-	border: 1px solid darkgray;
-	position: relative;
-	margin-top:100px;
+	width: calc(28% - 40px);
+	right: 0;
+	position: absolute;
+	margin:0px 20px 0;
+	z-index: 1000;
+	border-radius: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: gray;
+	background: white;
 }
-
+/*登录页面的黑色掩膜*/
+.loginMask{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background: url(../img/home/login_page_bg.jpg) no-repeat;
+	background-size: 72% 100%;
+}
 #topBackground{
 	width: 100%;
-	height: 100px;
-	background: deepskyblue;
-	line-height: 100px;
+	height: 60px;
+	line-height: 60px;
 	text-align: center;
+	margin-bottom: 40px;
 }
 
 #LoginBar{
 	display: flex;
-	justify-content:space-between
+	justify-content:space-between;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+#LoginBar span:hover{
+	cursor: pointer;
 }
 
-#LoginBar span{
-	display: inline-block;
-	width: 33%;
-	height: 18px;
-	line-height: 18px;
-	text-align: center;
-	background: goldenrod;
+#Login span:hover{
+	cursor: pointer;
+}
+#RegLogWrapper input{
+	padding-left: 25px;
+	box-sizing: border-box;
 }
 
-#LoginBar span:first-child{
-	background: deeppink;
+#RegLogWrapper input:focus{
+	border-bottom-style:solid;
+  border-bottom-color: #03a9f4;
+	outline-color:#03a9f4 ;
+	box-sizing: border-box;
 }
 
 #Login{
-	margin: 5% 15%;
+	margin: 5% 5%;
 	/*display: none;*/
+}
+
+/*登录页添加小icon*/
+.icon-zhanghao:before{
+	font-family: "iconfont";
+	content: "\e655";
+	display: inline-block;
+	font-size: 18px;
+	line-height: 24px;
+	position: absolute;
+}
+.icon-password:before{
+	font-family: "iconfont";
+	content: "\e65e";
+	display: inline-block;
+	font-size: 18px;
+	line-height: 24px;
+	position: absolute;
 }
 
 #account,#pass,#vericationCode,#loginButton,#verification{
 	margin-bottom: 5%;
 }
 
-
-
-.logResButton{
+.logResButton,.regButton{
 	width: 100%;
-	height: 30px;
-	line-height: 30px;
+	height: 40px;
+	line-height: 40px;
 	text-align: center;
-	background: deepskyblue;
-	border-radius: 5px;
+	background: #02a2aa;
+	border-radius: 20px;
 	color: white;
+	font-size: 18px;
 }
 
-.regButton{
-	margin: 0 auto;
-	width: 80%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	background: deepskyblue;
-	border-radius: 5px;
-	color: white;
-}
 
 #verification{
 	display:none;
@@ -105,11 +134,24 @@ a{
 	position: absolute;
 	left:50%;
 	transform:translateX(-50%);
-	bottom: 50px;
+	bottom: 40px;
+}
+#otherLogin>div{
+	margin:80px auto 0;
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
 }
 
 .wechatLogin{
 	color: red;
+}
+
+#registerTip{
+	text-align: left;
+}
+#findPassTip{
+	text-align: right;
 }
 
 /*注册界面*/
@@ -119,10 +161,74 @@ a{
 }
 
 #register div{
-	margin-bottom: 5%;
+	margin-bottom: 30px;
 }
-
-
+/*注册页面前面添加小icon*/
+.phone:before{
+	font-family: "iconfont";
+	content: "\e655";
+	display: inline-block;
+	font-size: 18px;
+	position: absolute;
+}
+.phone:after{
+	content: attr(data-content);
+	position: absolute;
+	right: 0;
+	color: red;
+}
+.regVerify:before{
+	font-family: "iconfont";
+	content: "\e623";
+	display: inline-block;
+	font-size: 18px;
+	position: absolute;
+}
+.regVerify:after{
+	content: attr(data-content);
+	position: absolute;
+	right: 0;
+	color: red;
+}
+.account:before{
+	font-family: "iconfont";
+	content: "\e678";
+	display: inline-block;
+	font-size: 18px;
+	position: absolute;
+}
+.account:after{
+	content: attr(data-content);
+	position: absolute;
+	right: 0;
+	color: red;
+}
+.pass:before{
+	font-family: "iconfont";
+	content: "\e65e";
+	display: inline-block;
+	font-size: 18px;
+	position: absolute;
+}
+.pass:after{
+	content: attr(data-content);
+	position: absolute;
+	right: 0;
+	color: red;
+}
+.pass2:before{
+	font-family: "iconfont";
+	content: "\e69e";
+	display: inline-block;
+	font-size: 18px;
+	position: absolute;
+}
+.pass2:after{
+	content: attr(data-content);
+	position: absolute;
+	right: 0;
+	color: red;
+}
 /*注册结果的信息*/
 .registerResult{
 	position:absolute;
@@ -132,13 +238,6 @@ a{
 	text-align: center;
 	width: 250px;
 }
-
-/*注册时的提示信息*/
-.tip{
-	color: red;
-	font-size:14px;
-}
-
 
 /*登陆*/
 .inputContext input{
@@ -153,21 +252,25 @@ a{
 }
 
 #account{
-	margin-top: 40px;
 	margin-bottom: 25px;
 }
 
 .loginMode{
+	margin-top: 20px;
 	margin-bottom: 50px;
 }
-
-#LoginBar{
-	font-size: 18px;
+.loginMode a:hover{
+	cursor: pointer;
 }
+
+
 
 /*注册*/
 #register{
-	margin: 5% 15%;
+	margin:0 5% 5%;
+}
+#register>div{
+	position: relative;
 }
 #register input{
 	border-bottom: 1px solid #dbdbdb;  	
@@ -175,11 +278,11 @@ a{
 	border-left:none;  
 	border-right:none;  
 	outline: none;
-	
 	width: 100%;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: "楷体";
-
+	line-height: 20px;
+	box-sizing: border-box;
 }
 
 .phone{
@@ -188,4 +291,25 @@ a{
 
 .regButton{
 	margin-top: 30px;
+}
+.regButton:hover{
+	cursor: pointer;
+}
+
+/*获取验证码*/
+.regVerify{
+	position: relative;
+}
+.regVerify:after{
+	content: '获取验证码';
+	color:deepskyblue;
+	font-size: 16px;
+	position: absolute;
+	right: 0;
+}
+.regVerify:hover:after{
+	cursor: pointer;
+}
+.regVerify:hover:focus{
+	color: orangered;
 }

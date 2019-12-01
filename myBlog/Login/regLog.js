@@ -131,9 +131,7 @@ function registerVerify(phone,time){
 function registerWithVerifyCode(){
 	$('.regButton').on('click',(e)=>{
 		e.stopPropagation();
-		console.log('我已经点击注册按钮了。')
 		if(phoneResult&&accountResult&&pass1Result&&pass2Result){
-			console.log('注册界面:发送ajax',verifyCode,requestId)
 			$.ajax({
 				url:'/api/user/register',
 				type:'post',
@@ -154,8 +152,6 @@ function registerWithVerifyCode(){
 						},1000);
 						
 						$('.registerResult').html('注册成功,跳转到登录页面');
-						$('#loginTip').css('background-color','deeppink');
-						$('#registerTip').css('background-color','goldenrod');	
 						
 					}else{
 						$('.registerResult').html(data);
@@ -303,22 +299,18 @@ function loginConfig(){
 	});
 	
 	registerWithVerifyCode();//点击按钮注册
-	
 	//注册页面
 	$('#registerTip').on('click',function(){
+//		history.pushState({page:'register'},"注册页面","?register");
+		let txt = $(this).html();
+		let title = $('#topBackground').html();
 		$('#Login input').val('');//跳转的时候清空用户名和密码;
-		$('#Login').hide();
-		$('#register').show();
-		$('#loginTip').css('background-color','goldenrod');
-		$(this).css('background-color','deeppink');
+		$('#Login').toggle();
+		$('#register').toggle();
+		$(this).html(txt === '登录' ? '注册' : '登录')
+		$('#topBackground').html(title === '注 册' ? '登 录' : '注 册')
 	})
-	//登录页面
-	$('#loginTip').on('click',function(){
-		$('#Login').show();
-		$('#register').hide();
-		$('#registerTip').css('background-color','goldenrod');
-		$(this).css('background-color','deeppink');
-	})
+
 	
 	//验证码登录与账号密码登录切换
 	$('#verifyLogin').on('click',()=>{
@@ -340,6 +332,10 @@ function loginConfig(){
 		$('#account input').val("");
 		$('#verification input').val("");
 	});
+	
+	$('#findPassTip').on('click',()=>{
+		alert('该共功能暂未开放')
+	})
 }
 
 
@@ -349,14 +345,14 @@ function registerConfig(){
 	$('#phoneInput').blur(()=>{
 		phoneResult = phoneRegister(phoneValue());
 		if(phoneResult!="号码不能为空"&&phoneResult!=true){
-			$('.resTip1').html(phoneResult)//验证手机号码的合法性
+			$('.phone').attr('data-content',phoneResult);
 		}
 	});
 	//判断有无按下删除键，按下了让input框内的提示信息消失
 	$('#phoneInput').keydown((e)=>{
 		var keycode = e.keyCode?e.keyCode:e.which;
 		if(keycode == '8'){
-			$('.resTip1').html("")//消除提示信息
+			$('.regVerify').attr('data-content','');//消除提示信息
 		}
 	})
 	
@@ -364,14 +360,14 @@ function registerConfig(){
 	$('#regAccount').blur(()=>{
 		accountResult = accountVerify();
 		if(accountResult!=true){
-			$('.resTip3').html(accountResult)//验证用户账号的合法性
+			$('.account').attr('data-content',accountResult);
 		}
 	})
 	
 	$('#regAccount').keydown((e)=>{
 		var keycode = e.keyCode?e.keyCode:e.which;
 		if(keycode == '8'){
-			$('.resTip3').html("")//消除提示信息
+			$('.account').attr('data-content','');//消除提示信息
 		}
 	})
 	
@@ -379,14 +375,14 @@ function registerConfig(){
 	$('.pass1Value').blur(()=>{
 		pass1Result = pass($('.pass1Value').val());	
 		if(pass1Result!=true&&pass1Result!="密码不能为空"){
-			$('.resTip4').html(pass1Result)//验证用户账号的合法性
+			$('.pass').attr('data-content',pass1Result);//消除提示信息
 		}
 	});
 	
 	$('.pass1Value').keydown((e)=>{
 		var keycode = e.keyCode?e.keyCode:e.which;
 		if(keycode == '8'){
-			$('.resTip4').html("")//消除提示信息
+			$('.pass').attr('data-content','');			//消除提示信息
 		}
 	})
 
@@ -394,12 +390,12 @@ function registerConfig(){
 	$('.pass2Value').blur(()=>{
 		pass2Result = pass($('.pass2Value').val());
 		if(pass2Result!=true&&pass2Result!="密码不能为空"){
-			$('.resTip5').html(pass2Result)//验证用户账号的合法性
+			$('.pass2').attr('data-content',pass2Result);			//消除提示信息
 		}
 		if(pass2Result==true){
 			if($('.pass2Value').val()!=$('.pass1Value').val())
 			{
-				$('.resTip5').html("两次的密码不一致")//验证用户账号的合法性
+				$('.pass2').attr('data-content','两次的密码不一致');//验证用户账号的合法性
 			}
 		}
 	})
@@ -407,7 +403,7 @@ function registerConfig(){
 	$('.pass2Value').keydown((e)=>{
 		var keycode = e.keyCode?e.keyCode:e.which;
 		if(keycode == '8'){
-			$('.resTip5').html("")//消除提示信息
+			$('.pass2').attr('data-content','');//消除提示信息
 		}
 	})
 }
