@@ -6,4 +6,4 @@
 3. 使用vscode调用http-server命令启动端口为8001的前端服务器
 4. 使用vscode调用npm run dev启动端口号为8002的node服务器
 5. 浏览器访问localhost:80/index.html可进入博客首页
-![个人博客首页]("https://github.com/yuhui7pm/yuhui_blog/edit/yuhui_test/screenshot_pic/博客首页.png")
+![个人博客首页]("https://github.com/yuhui7pm/yuhui_blog/edit/yuhui_test/images/博客首页.png")
