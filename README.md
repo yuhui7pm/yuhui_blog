@@ -5,5 +5,5 @@
 2. 在nginx.conf文件里配置nginx代理服务器，将前端服务器，后端服务器，图片服务器最终都指向同一个ip地址。事后启动nginx.exe。
 3. 使用vscode调用http-server命令启动端口为8001的前端服务器
 4. 使用vscode调用npm run dev启动端口号为8002的node服务器
-5. 浏览器访问localhost:80/index.html可进入博客首页
-![个人博客首页](https://github.com/yuhui7pm/yuhui_blog/blob/yuhui_test/screenshot_pic/blog.png)
+5. 浏览器访问localhost:80/index.html可进入博客首页  
+<center><img src="https://github.com/yuhui7pm/yuhui_blog/blob/yuhui_test/screenshot_pic/blog.png" alt="个人博客首页" width="70%"/></center>
