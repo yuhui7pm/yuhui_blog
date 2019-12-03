@@ -1,4 +1,10 @@
 # 个人博客前后端搭建
+## 文件说明
+blogImage文件夹是与博客相关的图片。比如：博文相关的图片，用户的头像等。
+myBlog文件夹为前端相关文件。
+myBlogNode文件夹里的为node后端服务器文件。
+myBlog_compress为压缩过的前端文件，暂时没有用处。
+screen_pic文件夹为.readMe文件中使用的图片。  
 ## 步骤  
 0. 配置mysql服务器，用于存储个人博客的数据。
 1. 配置redis服务器环境，IP地址127.0.0.1:6379。启动redis.server.exe和redis.cli.exe。用于缓存用户名，账号和密码。
